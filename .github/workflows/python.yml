@@ -1,0 +1,25 @@
+name: NIP Rent
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test with pytest
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Install UV
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version-file: ".python-version"
+
+    - name: Install the project
+      run: uv sync --dev
+
+    - name: Run tests
+      run: uv run pytest tests -v 

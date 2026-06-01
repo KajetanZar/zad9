@@ -3,6 +3,8 @@
       	".venv/Lib/site-packages"
     ],
   	"[python]": {
-
+		"editor.formatOnSave": true,
+    	"editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
     }
 }
